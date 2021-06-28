@@ -15,7 +15,7 @@ on:
         description: '固件默认管理IP地址 [可选]'
         default: ''
       src_url:
-        description: '固件源地址（默认：coolsnowwolf/lede:master）'
+        description: '固件源地址（可选：immortalwrt/immortalwrt:master、openwrt/openwrt:master）'
         default: 'coolsnowwolf/lede:master'
 ### END
 
