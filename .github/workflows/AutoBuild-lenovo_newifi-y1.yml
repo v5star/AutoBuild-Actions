@@ -12,8 +12,11 @@ on:
   workflow_dispatch:
     inputs:
       ip_addr:
-        description: '固件 IP 地址 [可选]'
+        description: '固件默认管理IP地址 [可选]'
         default: ''
+      src_url:
+        description: '固件源地址（默认：coolsnowwolf/lede:master）'
+        default: 'coolsnowwolf/lede:master'
 ### END
 
   #push:
@@ -31,7 +34,7 @@ env:
 # 设备名称 (可在 README 中找到获取方法)
   TARGET_PROFILE: lenovo_newifi-y1
 # 源码仓库:分支
-  DEFAULT_SOURCE: coolsnowwolf/lede:master
+  DEFAULT_SOURCE: ${{ github.event.inputs.src_url }} 
 # 上传固件到 Github Releases
   UPLOAD_RELEASES: true
 # 上传固件到 Github Artifacts
@@ -88,7 +91,7 @@ jobs:
         fi
         echo "Compile_Date=$(date +%Y%m%d%H%M)" > $GITHUB_WORKSPACE/Openwrt.info
         echo "Display_Date=$(date +%Y/%m/%d)" >> $GITHUB_WORKSPACE/Openwrt.info
-        echo "Defined_IP_Address=${{ github.event.inputs.IP }}" >> $GITHUB_WORKSPACE/Openwrt.info
+        echo "Defined_IP_Address=${{ github.event.inputs.ip_addr }}" >> $GITHUB_WORKSPACE/Openwrt.info
         echo "Openwrt_Repo=$REPO_URL" >> $GITHUB_WORKSPACE/Openwrt.info
         echo "Artifacts_Date=$(date +%m%d%H%M)" >> $GITHUB_ENV
         touch Release_info
