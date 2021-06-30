@@ -13,7 +13,7 @@ on:
     inputs:
       ip_addr:
         description: '固件默认管理IP地址 [可选]'
-        default: ''
+        default: '192.168.1.1'
       src_url:
         description: '固件源地址（可选：immortalwrt/immortalwrt:master、openwrt/openwrt:master）'
         default: 'coolsnowwolf/lede:master'
@@ -35,6 +35,10 @@ env:
   TARGET_PROFILE: lenovo_newifi-y1
 # 源码仓库:分支
   DEFAULT_SOURCE: ${{ github.event.inputs.src_url }} 
+# 固件默认管理IP
+  DEFAULT_MANAGE_IP: ${{ github.event.inputs.ip_addr }} 
+# 固件默认管理密码
+  DEFAULT_PASSWORD: password
 # 上传固件到 Github Releases
   UPLOAD_RELEASES: true
 # 上传固件到 Github Artifacts
