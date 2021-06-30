@@ -96,8 +96,8 @@ GET_INFO() {
 	x86_64)
 		Default_Legacy_Firmware="${Firmware_Head}-${TARGET_BOARD}-${TARGET_SUBTARGET}-${Legacy_Tail}.${Firmware_Type}"
 		Default_UEFI_Firmware="${Firmware_Head}-${TARGET_BOARD}-${TARGET_SUBTARGET}-${UEFI_Tail}.${Firmware_Type}"
-		AutoBuild_Firmware='AutoBuild-${Openwrt_Repo_Name}-${TARGET_PROFILE}-${CURRENT_Version}-${x86_64_Boot}-${SHA5BIT}.${Firmware_Type}'
-		Egrep_Firmware='AutoBuild-${Openwrt_Repo_Name}-${TARGET_PROFILE}-R[0-9]+.[0-9]+.[0-9]+-[0-9]+-${x86_64_Boot}.[0-9a-z]+.${Firmware_Type}'
+		AutoBuild_Firmware='OpenWrt-${Openwrt_Repo_Name}-${TARGET_PROFILE}-${CURRENT_Version}-${x86_64_Boot}-${SHA5BIT}.${Firmware_Type}'
+		Egrep_Firmware='OpenWrt-${Openwrt_Repo_Name}-${TARGET_PROFILE}-R[0-9]+.[0-9]+.[0-9]+-[0-9]+-${x86_64_Boot}.[0-9a-z]+.${Firmware_Type}'
 	;;
 	*)
 		case "${TARGET_SUBTARGET}" in
@@ -109,8 +109,8 @@ GET_INFO() {
 		;;
 		esac
 		
-		AutoBuild_Firmware='AutoBuild-${Openwrt_Repo_Name}-${TARGET_PROFILE}-${CURRENT_Version}-${SHA5BIT}.${Firmware_Type}'
-		Egrep_Firmware='AutoBuild-${Openwrt_Repo_Name}-${TARGET_PROFILE}-R[0-9]+.[0-9]+.[0-9]+.[0-9]+-[0-9a-z]+.${Firmware_Type}'
+		AutoBuild_Firmware='OpenWrt-${Openwrt_Repo_Name}-${TARGET_PROFILE}-${CURRENT_Version}-${SHA5BIT}.${Firmware_Type}'
+		Egrep_Firmware='OpenWrt-${Openwrt_Repo_Name}-${TARGET_PROFILE}-R[0-9]+.[0-9]+.[0-9]+.[0-9]+-[0-9a-z]+.${Firmware_Type}'
 	;;
 	esac
 	Firmware_Path="bin/targets/${TARGET_BOARD}/${TARGET_SUBTARGET}"
@@ -316,7 +316,7 @@ PS_Firmware() {
 		}
 	;;
 	esac
-	[[ ${Error_Output} != 1 ]] && mv -f AutoBuild-* ${Home}/bin/Firmware
+	[[ ${Error_Output} != 1 ]] && mv -f OpenWrt-* ${Home}/bin/Firmware
 	cd ${Home}
 	echo "[$(date "+%H:%M:%S")] Actions Avaliable: $(df -h | grep "/dev/root" | awk '{printf $4}')"
 }
