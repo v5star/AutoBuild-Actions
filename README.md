@@ -34,8 +34,7 @@
 
 **AutoBuild_DiyScript.sh: Diy_Core() 函数中的变量解释:**
 ```
-   Author 作者名称,若该项留空将自动获取
-
+  Author 作者名称,若该项留空将自动获
    Default_TARGET_PROFILE 设备名称,获取方法见上方
    
    Short_Firmware_Date 固件日期样式,当设置为 true: [20210601] false: [202106012359]
@@ -64,11 +63,13 @@
 
    **一键编译** 先删除`第 29-30 行`的注释并保存,单(双)击重新点亮右上角的 **Star** 即可一键编译
 
-   **定时编译** 先删除`第 26-27 行`的注释,然后按需修改相关参数并保存,[使用方法](https://www.runoob.com/w3cnote/linux-crontab-tasks.html)
+   **定时编译** 先删除`第 26-27 行`的注释，不建议定是编译,然后按需修改相关参数并保存,[使用方法](https://www.runoob.com/w3cnote/linux-crontab-tasks.html) 
 
    **手动编译** 点击上方`Actions`,选择你要编译的设备名称,点击右方`Run workflow`,点击绿色按钮即可开始编译
    
-   **临时修改 IP 地址** 该功能仅在**手动编译**时生效,点击`Run workflow`后即可输入 IP 地址(优先级**高于** `Default_LAN_IP`)
+   **临时修改 IP 地址** 该功能仅在**手动编译**时生效,点击`Run workflow`后即可输入 IP 地址(优先级**高于** `Default_LAN_IP`)，代码源。
+   **默认管理IP**  192.168.2.1 默认密码：password
+   **关于管理IP**  光猫一般为192.168.0.1或者192.168.1.1，你的无线路由器一般为192.168.2.1，这样便于记忆。
 
 ## 使用 AutoUpdate 一键更新脚本:
 
