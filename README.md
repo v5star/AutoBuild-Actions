@@ -40,7 +40,7 @@
    
    Short_Firmware_Date 固件日期样式,当设置为 true: [20210601] false: [202106012359]
    
-   Default_LAN_IP 固件 LAN IP 地址,默认为 192.168.1.1
+   Default_LAN_IP 固件 LAN IP 地址,默认为 192.168.3.1 (推荐)
 
    INCLUDE_AutoBuild_Features 自动添加 AutoBuild 特性到固件
 
@@ -62,9 +62,9 @@
 ```
 ## 编译固件(STEP 3):
 
-   **一键编译** 先删除`第 26-27 行`的注释并保存,单(双)击重新点亮右上角的 **Star** 即可一键编译
+   **一键编译** 先删除`第 29-30 行`的注释并保存,单(双)击重新点亮右上角的 **Star** 即可一键编译
 
-   **定时编译** 先删除`第 23-24 行`的注释,然后按需修改相关参数并保存,[使用方法](https://www.runoob.com/w3cnote/linux-crontab-tasks.html)
+   **定时编译** 先删除`第 26-27 行`的注释,然后按需修改相关参数并保存,[使用方法](https://www.runoob.com/w3cnote/linux-crontab-tasks.html)
 
    **手动编译** 点击上方`Actions`,选择你要编译的设备名称,点击右方`Run workflow`,点击绿色按钮即可开始编译
    
@@ -96,10 +96,9 @@
 
    - [P3TERX's Actions-OpenWrt Project](https://github.com/P3TERX/Actions-OpenWrt)
 
-   - [P3TERX's Blog](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
-
    - [ImmortalWrt's Source code](https://github.com/immortalwrt)
+   
+   - [OpenWrt's Source code](https://github.com/OpenWrt/OpenWrt)
 
    - [eSir 's workflow template](https://github.com/esirplayground/AutoBuild-OpenWrt/blob/master/.github/workflows/Build_OP_x86_64.yml)
 
-   - 测试与建议: [CurssedCoffin](https://github.com/CurssedCoffin) [Licsber](https://github.com/Licsber) [sirliu](https://github.com/sirliu) [teasiu](https://github.com/teasiu)
