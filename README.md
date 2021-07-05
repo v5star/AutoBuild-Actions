@@ -1,31 +1,22 @@
-# Actions for Building OpenWrt / AutoUpdate
+# 使用Actions编译OpenWrt固件或更新
 
 ![GitHub Stars](https://img.shields.io/github/stars/Hyy2001X/AutoBuild-Actions.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/Hyy2001X/AutoBuild-Actions.svg?style=flat-square&label=Forks&logo=github)
 
-测试通过的设备: `lenovo_newifi-y1` ，能使用，但是有些问题。
+测试通过的设备: `lenovo_newifi-y1` ，能使用，但是有些问题不会自动挂载U盘，还在研究中。
 
 支持的源码: `coolsnowwolf/lede`、`immortalwrt/immortalwrt`、`openwrt/openwrt`
 
 ## 部署环境(STEP 1):
 
-1. 首先需要获取 **Github Token**: [点击这里](https://github.com/settings/tokens/new) 获取,
+1.  **Fork** 我的`AutoBuild-Actions`仓库,然后进入你的`AutoBuild-Actions`仓库进行之后修改和定制，看注释。
 
-   `Note`项填写一个名称,`Select scopes`**全部打勾**,完成后点击下方`Generate token`
-
-2. 复制页面中生成的 **Token**,**并保存到本地,Token 只会显示一次!**
-
-3. **Fork** 我的`AutoBuild-Actions`仓库,然后进入你的`AutoBuild-Actions`仓库进行之后的设置
-
-4. 点击上方菜单中的`Settings`,依次点击`Secrets`-`New repository secret`
-
-   其中`Name`项随意填写,然后将你的 **Token** 粘贴到`Value`项,完成后点击`Add secert`
 
 ## 定制固件(STEP 2):
 
 1. 进入你的`AutoBuild-Actions`仓库,**下方所有操作都将在你的`AutoBuild-Actions`仓库下进行**
 
-   **提示: 下文中所有的 TARGET_PROFILE 均为你的设备名称,可以在 .config 中找到,例如 d-team_newifi-d2**
+   **提示: 下文中所有的 TARGET_PROFILE 均为你的设备名称,可以在 .config 中找到没有自己建一个,例如： lenovo_newifi-y1**
 
    **在本地的 .config 文件中获取设备名称:** `egrep -o "CONFIG_TARGET.*DEVICE.*=y" .config | sed -r 's/.*DEVICE_(.*)=y/\1/'`
    
@@ -33,15 +24,13 @@
 
 2. 把本地的 `.config` 文件重命名为你设备的 **TARGET_PROFILE** 并上传到`/Configs`目录
 
-3. 编辑`.github/workflows/*.yml`文件,修改`第 7 和 32 行`为你设备的 **TARGET_PROFILE**
+3. 编辑`.github/workflows/*.yml`文件,修改`第35 行`为你设备的 **TARGET_PROFILE**  后面的值 
 
-   **使用其他源码** 修改`第 34 行`为源码的仓库地址:分支
-
-4. 按照需求编辑并定制`Scripts/AutoBuild_DiyScript.sh`文件
+4. 按照需求编辑并定制`Scripts/AutoBuild_DiyScript.sh`文件（还在研究中）
 
    **注意: 为了更方便地同步最新改动,不建议修改 Scripts/AutoBuild_Function.sh 文件**
 
-   **第三方软件包列表** 编辑`CustomPackages`目录下对应的 **TARGET_PROFILE** 的文件,按照现有语法为该设备添加第三方软件包 (可选)
+   **第三方软件包列表** 编辑`CustomPackages`目录下对应的 **TARGET_PROFILE** 的文件,按照现有语法为该设备添加第三方软件包 (可选，自行研究)
 
 **AutoBuild_DiyScript.sh: Diy_Core() 函数中的变量解释:**
 ```
