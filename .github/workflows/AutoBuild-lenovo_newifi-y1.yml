@@ -15,7 +15,7 @@ on:
         description: '固件默认管理IP地址 [可选]'
         default: '192.168.2.1'
       src_url:
-        description: '固件源地址（可选：immortalwrt/immortalwrt:master、openwrt/openwrt:master）'
+        description: '固件源地址（可选：immortalwrt/immortalwrt:master、openwrt/openwrt:master、Lienol/openwrt:main）'
         default: 'coolsnowwolf/lede:master'
 ### END
 
