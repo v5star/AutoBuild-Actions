@@ -100,6 +100,10 @@ jobs:
         echo "Artifacts_Date=$(date +%m%d%H%M)" >> $GITHUB_ENV
         touch Release_info
 
+    - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
+      
     - name: Clone Openwrt Source Code
       run: |
         git clone -b $REPO_BRANCH $REPO_URL openwrt
@@ -137,7 +141,11 @@ jobs:
       run: |
         cd openwrt
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_Function.sh && PS_Firmware
-
+        
+    - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
+      
     - name: Upload Firmware to Artifacts
       uses: actions/upload-artifact@main
       if: env.UPLOAD_ARTIFACTS == 'true' && env.Compile_Result == 'true' && !cancelled()
