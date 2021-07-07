@@ -4,7 +4,7 @@
 # Depends on bash wget curl x86:gzip
 
 TITLE() {
-	clear && echo "Openwrt-AutoUpdate Script by Hyy2001 ${Version}"
+	clear && echo "AutoUpdate ${Version} 最后脚本更新 by v5star"
 }
 
 SHELL_HELP() {
@@ -158,8 +158,8 @@ LOAD_VARIABLE() {
 	Github_Release_URL="${Github}/releases/download/AutoUpdate"
 	FW_Author="${Github##*com/}"
 	Github_API="https://api.github.com/repos/${FW_Author}/releases/latest"
-	Release_URL="https://github.com/${FW_Author}/releases/download/AutoUpdate"
-	Release_FastGit_URL="https://download.fastgit.org/${FW_Author}/releases/download/AutoUpdate"
+	Release_URL="https://github.com/${FW_Author}/releases/download/OpenWrt-Newifi-Y1"
+	Release_FastGit_URL="https://download.fastgit.org/${FW_Author}/releases/download/OpenWrt-Newifi-Y1"
 	Release_Goproxy_URL="https://ghproxy.com/${Release_URL}"
 	case ${TARGET_PROFILE} in
 	x86_64)
@@ -203,7 +203,7 @@ EDIT_VARIABLE() {
 CHANGE_GITHUB() {
 	[[ ! $1 =~ https://github.com/ ]] && {
 		ECHO r "ERROR Github URL: $1"
-		ECHO r "错误的 Github 地址,示例: https://github.com/Hyy2001X/AutoBuild-Actions"
+		ECHO r "错误的 Github 地址,示例: https://github.com/username/AutoBuild-Actions"
 		EXIT 1
 	}
 	UCI_Github_URL=$(uci get autoupdate.@common[0].github 2>/dev/null)
@@ -569,7 +569,7 @@ AutoUpdate_Main() {
 				[[ -n ${Version} ]] && echo "${Version}" || echo "未知"
 			;;
 			cloud)
-				Cloud_Script_Version="$(${Downloader} https://ghproxy.com/https://raw.githubusercontent.com/Hyy2001X/AutoBuild-Actions/master/Scripts/AutoUpdate.sh -O - | egrep -o "V[0-9].+")"
+				Cloud_Script_Version="$(${Downloader} https://ghproxy.com/https://raw.githubusercontent.com/v5star/AutoBuild-Actions/master/Scripts/AutoUpdate.sh -O - | egrep -o "V[0-9].+")"
 				[[ -n ${Cloud_Script_Version} ]] && echo "${Cloud_Script_Version}" || echo "未知"
 			;;
 			*)
@@ -702,7 +702,7 @@ AutoUpdate_Main() {
 Version=V6.3.0
 AutoUpdate_Path=/tmp/AutoUpdate
 AutoUpdate_Log_Path=/tmp
-AutoUpdate_Script_URL=https://ghproxy.com/https://raw.githubusercontent.com/Hyy2001X/AutoBuild-Actions/master/Scripts/AutoUpdate.sh
+AutoUpdate_Script_URL=https://ghproxy.com/https://raw.githubusercontent.com/v5star/AutoBuild-Actions/master/Scripts/AutoUpdate.sh
 Upgrade_Command=sysupgrade
 Default_Variable=/etc/AutoBuild/Default_Variable
 Custom_Variable=/etc/AutoBuild/Custom_Variable
