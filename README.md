@@ -5,7 +5,7 @@
 
 测试通过的设备: `lenovo_newifi-y1` ，能使用，但是有些问题不会自动挂载U盘，还在研究中。
 
-支持的源码: `coolsnowwolf/lede`、`immortalwrt/immortalwrt`、`openwrt/openwrt`
+支持的源码: `coolsnowwolf/lede` 
 
 ## 部署环境(STEP 1):
 
@@ -59,15 +59,11 @@
 
    [复制 /CustomFiles 文件到源码] Copy 文件(夹)名称 目标路径 新名称[可选]
 ```
-## 编译固件(STEP 3):
-
-   **一键编译** 先删除`第 29-30 行`的注释并保存,单(双)击重新点亮右上角的 **Star** 即可一键编译
-
-   **定时编译** 先删除`第 26-27 行`的注释，不建议定是编译,然后按需修改相关参数并保存,[使用方法](https://www.runoob.com/w3cnote/linux-crontab-tasks.html) 
+## 编译固件(STEP 3):   
 
    **手动编译** 点击上方`Actions`,选择你要编译的设备名称,点击右方`Run workflow`,点击绿色按钮即可开始编译
    
-   **临时修改 IP 地址** 该功能仅在**手动编译**时生效,点击`Run workflow`后即可输入 IP 地址(优先级**高于** `Default_LAN_IP`)，代码源。
+   **临时修改 IP 地址** 该功能仅在**手动编译**时生效,点击`Run workflow`后即可输入 IP 地址(优先级**高于** `Default_LAN_IP`)。
    
    **默认管理IP**  192.168.2.1 默认密码：password
    
