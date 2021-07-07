@@ -4,7 +4,7 @@
 # Depends on bash wget curl x86:gzip
 
 TITLE() {
-	clear && echo "AutoUpdate ${Version} 最后脚本更新 by v5star"
+	clear && echo "AutoUpdate ${Version} 脚本最后更新 by v5star"
 }
 
 SHELL_HELP() {
