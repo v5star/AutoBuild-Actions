@@ -155,7 +155,7 @@ LOAD_VARIABLE() {
 	[[ -z ${TARGET_PROFILE} ]] && TARGET_PROFILE="$(jsonfilter -e '@.model.id' < /etc/board.json | tr ',' '_')"
 	[[ -z ${TARGET_PROFILE} ]] && ECHO r "获取设备名称失败,无法执行更新!" && EXIT 1
 	[[ -z ${CURRENT_Version} ]] && CURRENT_Version=未知
-	Github_Release_URL="${Github}/releases/download/AutoUpdate"
+	Github_Release_URL="${Github}/releases/download/OpenWrt-Newifi-Y1"
 	FW_Author="${Github##*com/}"
 	Github_API="https://api.github.com/repos/${FW_Author}/releases/latest"
 	Release_URL="https://github.com/${FW_Author}/releases/download/OpenWrt-Newifi-Y1"
