@@ -24,7 +24,5 @@ Firmware-Diy() {
 	;;
 	*)
 		: 
-		AddPackage git kenzo openwrt-packages kenzok8 master
-		AddPackage git small small kenzok8 master
 	esac
 }
