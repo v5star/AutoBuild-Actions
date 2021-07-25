@@ -23,6 +23,7 @@ Firmware-Diy() {
 		:
 	;;
 	*)
-		: 
+		:
+             AddPackage git passwll openwrt-passwall xiaorouji  main
 	esac
 }
