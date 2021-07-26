@@ -116,13 +116,13 @@ jobs:
         cd feeds/luci/applications/openwrt-packages
         echo "更新 luci-app-passwall 的子模块..."
         git submodule update --init --recursive
-        echo "编译 po2lmo ..."
-        cd tools/po2lmo
-        make -j${cores:=1}
-        sudo make install
-        make clean
-        echo "编译 TcpRoute2 ..."
-        cd ../TcpRoute2
+        #echo "编译 po2lmo ..."
+        #cd tools/po2lmo
+        #make -j${cores:=1}
+        #sudo make install
+        #make clean
+        #echo "编译 TcpRoute2 ..."
+        #cd ../TcpRoute2
         go get -d -v ./...
         env AR="${target_host}-ar" CC="${target_host}-gcc" CXX="${target_host}-gcc++" CGO_ENABLED=1 GO111MODULE=auto GOOS=${target_host##*-} GOARCH=mipsle go build -ldflags "-s -w" -o tcproute2 #需要修改
         ${target_host}-readelf -d tcproute2
@@ -131,16 +131,16 @@ jobs:
         mkdir -p /tmp/bin
         mv -f tcproute2 /tmp/bin
         echo "编译 ipt2socks ..."
-        cd ../ipt2socks
-        make CC=${target_host}-gcc -j${cores:=1}
+        #cd ../ipt2socks
+        #make CC=${target_host}-gcc -j${cores:=1}
         ${target_host}-readelf -d ipt2socks
-        file ipt2socks
+        #file ipt2socks
         upx --ultra-brute --best -v ipt2socks
         mv -f ipt2socks /tmp/bin
         make clean
         echo "编译 smartdns ..."
-        cd ../smartdns
-        mkdir -p /tmp/ssl
+        #cd ../smartdns
+        #mkdir -p /tmp/ssl
         #git clone https://github.com/openssl/openssl
         #cd openssl
         #git submodule update --init --recursive
