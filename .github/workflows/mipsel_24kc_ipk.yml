@@ -1,4 +1,4 @@
-name: mipsel_24kc
+name: mipsel_24kc_ipk
 
 on:
   #push:
