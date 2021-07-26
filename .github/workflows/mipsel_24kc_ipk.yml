@@ -1,12 +1,12 @@
 name: mipsel_24kc_ipk
 
 on: 
-  push:
-    branches: [ master ]
+  #push:
+    #branches: [ master ]
   #pull_request:
     #branches: [ master ]
-  #watch:
-    #types: [ started ]
+  watch:
+    types: started
   #schedule:
     #- cron:  '0 0 28-31 * *'
 
@@ -111,9 +111,9 @@ jobs:
         [ $? -ne 0 ]&&echo "下载.config失败!"&&exit 127
         [ ! -d feeds/luci/applications ]&&echo "没有找到 feeds/luci/applications 路径!"&&exit 127
         echo "克隆 luci-app-passwall 中..."
-        git clone https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-passwall feeds/luci/applications/luci-app-passwall
-        echo "进入 luci-app-passwall-plus 软件包目录..." 
-        cd feeds/luci/applications/luci-app-passwall
+        git clone https://github.com/kenzok8/openwrt-packages feeds/luci/applications/openwrt-packages
+        echo "进入 luci-app-passwall  软件包目录..." 
+        cd feeds/luci/applications/openwrt-packages
         echo "更新 luci-app-passwall 的子模块..."
         git submodule update --init --recursive
         echo "编译 po2lmo ..."
@@ -174,7 +174,7 @@ jobs:
         mkdir -p /tmp/ipk
         pushd ${dirn}/${dirn1}        
         ./scripts/feeds update -a
-        ./scripts/feeds install luci-app-passwall
+        ./scripts/feeds install -a > /dev/null 2>&1
         make package/luci-app-passwall/compile -j${cores:=1}
         find bin/ -type f -name "*luci-app-passwall*" | xargs -t -i mv -vf {} /tmp/ipk
         popd
