@@ -1,12 +1,18 @@
 name: mipsel_24kc_ipk
 
 on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ip_addr:
+        description: '固件默认管理IP地址 [可选]'
+        default: '192.168.2.1'
   #push:
     #branches: [ master ]
   #pull_request:
     #branches: [ master ]
-  watch:
-    types: started
+ # watch:
+  #  types: started
   #schedule:
     #- cron:  '0 0 28-31 * *'
 
