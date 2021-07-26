@@ -1,12 +1,12 @@
 name: mipsel_24kc_ipk
 
-on:
+ on:
   #push:
     #branches: [ master ]
   #pull_request:
     #branches: [ master ]
   watch:
-    types: started
+    types: [started]
   #schedule:
     #- cron:  '0 0 28-31 * *'
 
