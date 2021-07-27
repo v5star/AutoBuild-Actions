@@ -26,6 +26,6 @@ Firmware-Diy() {
 		:
              AddPackage git passwll openwrt-passwall xiaorouji main
 	     # AddPackage git small small kenzok8 master
-	     AddPackage git other openwrt-packages kenzok8 master
+	     # AddPackage git other openwrt-packages kenzok8 master
 	esac
 }
