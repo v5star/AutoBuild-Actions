@@ -15,19 +15,14 @@ CONFIG_PACKAGE_smartmontools=y
 
 #风格主题
 CONFIG_PACKAGE_luci-theme-argon=y
-CONFIG_PACKAGE_luci-theme-material=y
+#CONFIG_PACKAGE_luci-theme-material=y
 
-CONFIG_PACKAGE_luci-app-samba=y
-CONFIG_PACKAGE_samba36-server=y
-CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL=-1
 CONFIG_PACKAGE_luci-app-ttyd=y
-CONFIG_PACKAGE_ttyd=y
-CONFIG_PACKAGE_luci-app-zerotier=y
-CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
+CONFIG_PACKAGE_ttyd=y
+
+CONFIG_PACKAGE_luci-app-zerotier=y
 CONFIG_PACKAGE_luci-i18n-zerotier-zh-cn=y
-CONFIG_PACKAGE_luci-app-unblockmusic=n
-CONFIG_PACKAGE_luci-i18n-unblockmusic-zh-cn=n
 
 #删除 
 CONFIG_PACKAGE_luci-app-control-mia=n
@@ -36,27 +31,17 @@ CONFIG_PACKAGE_luci-app-accesscontrol=n
 CONFIG_PACKAGE_luci-i18n-accesscontrol-zh-cn=n
 CONFIG_PACKAGE_luci-app-ddns=n
 CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=n
+CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=n
+CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=n
+CONFIG_PACKAGE_luci-app-unblockmusic=n
+CONFIG_PACKAGE_luci-i18n-unblockmusic-zh-cn=n
 
+#CONFIG_PACKAGE_luci-app-ssr-plus=y
 
-CONFIG_PACKAGE_luci-app-ssr-plus=y
+#CONFIG_PACKAGE_luci-app-samba=y
+#CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y
+#CONFIG_PACKAGE_samba36-server=y
+#CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL=-1
 
 #CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
-#
-# Configuration
-#
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Dns2socks=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Kcptun=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_PDNSD=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_GO=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
-# end of Configuration
-
-#CONFIG_PACKAGE_luci-app-smartdns=y
