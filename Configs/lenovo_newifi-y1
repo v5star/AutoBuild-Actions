@@ -43,12 +43,6 @@ CONFIG_VSFTPD_USE_UCI_SCRIPTS=n
 CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
-CONFIG_PACKAGE_luci-i18n-ssr-plus-zh-cn=y
-CONFIG_PACKAGE_v2ray-core=y
-CONFIG_PACKAGE_xray-core=y
-CONFIG_PACKAGE_xray-plugin=y
 
 #CONFIG_PACKAGE_luci-app-samba=y
 #CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y
