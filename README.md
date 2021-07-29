@@ -3,7 +3,7 @@
 ![GitHub Stars](https://img.shields.io/github/stars/Hyy2001X/AutoBuild-Actions.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/Hyy2001X/AutoBuild-Actions.svg?style=flat-square&label=Forks&logo=github)
 
-测试通过的设备: `lenovo_newifi-y1` ，能使用，但是有些问题不会自动挂载U盘，还在研究中。
+测试通过的设备: `lenovo_newifi-y1` ，能使用，自用没有问题。
 
 支持的源码: `coolsnowwolf/lede` 
 
@@ -69,7 +69,7 @@
    
    **关于管理IP**  光猫一般为192.168.0.1或者192.168.1.1，你的无线路由器一般为192.168.2.1，这样便于记忆。
 
-## 使用 AutoUpdate 一键更新脚本:
+## 使用 AutoUpdate 一键更新脚本（升级有问题）:
 
    首先需要打开`TTYD 终端`或者在浏览器输入`IP 地址:7681`,按需输入下方指令:
 
