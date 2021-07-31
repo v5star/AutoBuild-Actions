@@ -32,7 +32,7 @@ on:
 ### 环境变量设置
 env:
 # 设备名称 (可在 README 中找到获取方法)
-  TARGET_PROFILE: lenovo_newifi-y1/${{ github.event.inputs.plug-in }}
+  TARGET_PROFILE: lenovo_newifi-y1
 # 源码仓库:分支
   DEFAULT_SOURCE: coolsnowwolf/lede:master
 # 固件默认管理IP
@@ -116,6 +116,7 @@ jobs:
       run: |
         chmod +x Scripts/AutoBuild_*.sh
         cp $GITHUB_WORKSPACE/Configs/$TARGET_PROFILE openwrt/.config
+        cat $GITHUB_WORKSPACE/Configs/plug-in/${{ github.event.inputs.plug-in }} >> .config
         cd openwrt
         make defconfig > /dev/null 2>&1
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_DiyScript.sh
