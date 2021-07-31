@@ -24,7 +24,7 @@ Firmware-Diy() {
 	;;
 	*)
 		:
-		#AddPackage git passwll openwrt-passwall xiaorouji main
-		AddPackage git other openwrt-packages liuran001 packages
+		AddPackage git passwll openwrt-passwall xiaorouji main
+		#AddPackage git other openwrt-packages liuran001 packages
 	esac
 }
