@@ -117,12 +117,12 @@ jobs:
       run: |
         chmod +x Scripts/AutoBuild_*.sh
         cp $GITHUB_WORKSPACE/Configs/$TARGET_PROFILE openwrt/.config
+        cd openwrt
         plugin=${{ github.event.inputs.plug-in }}
         if [ $plugin !='' ]; then
            echo "添加插件"
-           cat $GITHUB_WORKSPACE/Configs/plug-in/${{ github.event.inputs.plug-in }} >> .config
-        fi
-        cd openwrt
+           cat $GITHUB_WORKSPACE/Configs/plug-in/$plugin >> .config
+        fi        
         make defconfig > /dev/null 2>&1
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_DiyScript.sh
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_Function.sh
