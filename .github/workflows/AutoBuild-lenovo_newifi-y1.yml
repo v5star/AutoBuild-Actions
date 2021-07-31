@@ -119,7 +119,7 @@ jobs:
         cp $GITHUB_WORKSPACE/Configs/$TARGET_PROFILE openwrt/.config
         cd openwrt
         plugin='${{ github.event.inputs.plug-in }}'
-        if [ $plugin !=='' ]; then
+        if [ "${plugin}" ]; then
            echo "添加插件"
            cat $GITHUB_WORKSPACE/Configs/plug-in/$plugin >> .config
         fi        
