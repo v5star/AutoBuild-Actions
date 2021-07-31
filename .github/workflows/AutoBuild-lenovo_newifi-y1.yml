@@ -14,6 +14,9 @@ on:
       ip_addr:
         description: '固件默认管理IP地址 [可选]'
         default: '192.168.2.1'
+      plug-in:
+        description: '固件插件配置'
+        default: 'standard'
 ### END
 
   #push:
@@ -29,7 +32,7 @@ on:
 ### 环境变量设置
 env:
 # 设备名称 (可在 README 中找到获取方法)
-  TARGET_PROFILE: lenovo_newifi-y1
+  TARGET_PROFILE: lenovo_newifi-y1/${{ github.event.inputs.plug-in }}
 # 源码仓库:分支
   DEFAULT_SOURCE: coolsnowwolf/lede:master
 # 固件默认管理IP
