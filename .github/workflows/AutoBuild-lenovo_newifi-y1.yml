@@ -13,7 +13,7 @@ on:
     inputs:
       ip_addr:
         description: '固件默认管理IP地址 [可选]'
-        default: '192.168.2.1'
+        default: '192.168.3.1'
       plug-in:
         description: '固件插件配置'
         default: ''
