@@ -14,9 +14,6 @@ on:
       ip_addr:
         description: '固件默认管理IP地址 [可选]'
         default: '192.168.3.1'
-      plug-in:
-        description: '固件插件配置'
-        default: ''
 ### END
 
   #push:
@@ -76,7 +73,6 @@ jobs:
         echo "REPO_URL=$REPO_URL" >> $GITHUB_ENV
         echo "REPO_BRANCH=$REPO_BRANCH" >> $GITHUB_ENV
         echo -e "TARGET_PROFILE: $TARGET_PROFILE\nSOURCE: $REPO_URL:$REPO_BRANCH"
-        echo -e "插件：${{ github.event.inputs.plug-in }}"
 
     - name: Initialization Environment
       env:
@@ -118,11 +114,6 @@ jobs:
         chmod +x Scripts/AutoBuild_*.sh
         cp $GITHUB_WORKSPACE/Configs/$TARGET_PROFILE openwrt/.config
         cd openwrt
-        plugin='${{ github.event.inputs.plug-in }}'
-        if [ "${plugin}" ]; then
-           echo "添加插件"
-           cat $GITHUB_WORKSPACE/Configs/plug-in/$plugin >> .config
-        fi        
         make defconfig > /dev/null 2>&1
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_DiyScript.sh
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_Function.sh
