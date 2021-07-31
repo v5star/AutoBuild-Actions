@@ -1,0 +1,21 @@
+
+#lenovo_newifi-y1 标准版固件
+#设备固件设置
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt7620=y
+CONFIG_TARGET_ramips_mt7620_DEVICE_lenovo_newifi-y1=y
+
+#删除一些无用应用，让专业的app干专业的事
+CONFIG_PACKAGE_luci-app-control-mia=n
+CONFIG_PACKAGE_luci-app-wol=n
+CONFIG_PACKAGE_luci-app-accesscontrol=n
+CONFIG_PACKAGE_luci-app-ddns=n
+CONFIG_PACKAGE_luci-app-unblockmusic=n
+CONFIG_PACKAGE_miniupnpd=n
+CONFIG_PACKAGE_luci-app-upnp=n
+CONFIG_PACKAGE_luci-app-vsftpd=n
+CONFIG_PACKAGE_vsftpd=n
+CONFIG_PACKAGE_luci-app-ssr-plus=n
+
+#风格主题
+CONFIG_PACKAGE_luci-theme-argon=y
