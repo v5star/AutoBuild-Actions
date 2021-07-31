@@ -76,6 +76,7 @@ jobs:
         echo "REPO_URL=$REPO_URL" >> $GITHUB_ENV
         echo "REPO_BRANCH=$REPO_BRANCH" >> $GITHUB_ENV
         echo -e "TARGET_PROFILE: $TARGET_PROFILE\nSOURCE: $REPO_URL:$REPO_BRANCH"
+        echo -e "插件：${{ github.event.inputs.plug-in }}"
 
     - name: Initialization Environment
       env:
