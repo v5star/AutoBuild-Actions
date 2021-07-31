@@ -16,7 +16,7 @@ on:
         default: '192.168.2.1'
       plug-in:
         description: '固件插件配置'
-        default: 'standard'
+        default: ''
 ### END
 
   #push:
