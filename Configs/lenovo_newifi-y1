@@ -6806,3 +6806,4 @@ CONFIG_STRACE_NONE=y
 # CONFIG_PACKAGE_fontconfig is not set
 # end of Font-Utils
 # end of Xorg
+CONFIG_PACKAGE_luci-app-ssr-plus=n
