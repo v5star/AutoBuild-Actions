@@ -213,6 +213,7 @@ Firmware-Diy_Base() {
 	[ -f package/base-files/files/bin/AutoUpdate.sh ] && {
 		AutoUpdate_Version=$(egrep -o "V[0-9].+" package/base-files/files/bin/AutoUpdate.sh | awk 'END{print}')
 	} || AutoUpdate_Version=OFF
+	sed -i "s/OpenWrt/Newifi/g" package/base-files/files/bin/config_generate
 	Copy CustomFiles/Depends/profile package/base-files/files/etc
 	Copy CustomFiles/Depends/base-files-essential package/base-files/files/lib/upgrade/keep.d
 	case "${Openwrt_Author}" in
