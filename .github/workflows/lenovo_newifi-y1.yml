@@ -128,22 +128,16 @@ jobs:
         cd openwrt
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_Function.sh && PS_Firmware
         
-    - name: Organize files
-      id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
-      run: |
-        cd openwrt/bin/targets/*/*
-        rm -rf packages
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "::set-output name=status::success"
+    - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
       
     - name: Upload Firmware to Artifacts
       uses: actions/upload-artifact@main
       if: env.UPLOAD_ARTIFACTS == 'true' && env.Compile_Result == 'true' && !cancelled()
       with:
         name: ${{ env.TARGET_PROFILE }}_${{ env.REPO_BRANCH }}_firmware_${{ env.Artifacts_Date }}
-        #path: openwrt/bin/Firmware
-        path: ${{ env.FIRMWARE }}
+        path: openwrt/bin/Firmware
 
     - name: Upload bin to Artifacts
       uses: actions/upload-artifact@main
