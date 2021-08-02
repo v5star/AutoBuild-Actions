@@ -137,7 +137,8 @@ jobs:
       if: env.UPLOAD_ARTIFACTS == 'true' && env.Compile_Result == 'true' && !cancelled()
       with:
         name: ${{ env.TARGET_PROFILE }}_${{ env.REPO_BRANCH }}_firmware_${{ env.Artifacts_Date }}
-        path: openwrt/bin/Firmware
+        #path: openwrt/bin/Firmware
+        path: ${{ env.FIRMWARE }}
 
     - name: Upload bin to Artifacts
       uses: actions/upload-artifact@main
