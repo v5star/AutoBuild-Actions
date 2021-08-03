@@ -6,7 +6,7 @@ CONFIG_PACKAGE_kmod-usb-storage=y
 CONFIG_PACKAGE_kmod-usb-storage-extras=y
 CONFIG_PACKAGE_kmod-fs-vfat=y
 CONFIG_PACKAGE_ntfs-3g=y
-CONFIG_PACKAGE_kmod-nls-utf8
+CONFIG_PACKAGE_kmod-nls-utf8=y
 #风格主题
 CONFIG_PACKAGE_luci-theme-argon=y
 #插件
