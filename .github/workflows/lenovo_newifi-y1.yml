@@ -122,6 +122,7 @@ jobs:
         make -j$(nproc) || make -j1 V=s
         [ $? == 0 ] && Compile_Result=true
         echo "Compile_Result=$Compile_Result" >> $GITHUB_ENV
+        
     - name: Process Firmware
       if: env.Compile_Result == 'true' && !cancelled()
       run: |
@@ -135,6 +136,13 @@ jobs:
         name: ${{ env.TARGET_PROFILE }}_${{ env.REPO_BRANCH }}_firmware_${{ env.Artifacts_Date }}
         path: openwrt/bin/Firmware
 
+    - name: Organize files
+      id: organize
+      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      run: |
+        cd openwrt/bin
+        rm -rf packages
+        
     - name: Upload bin to Artifacts
       uses: actions/upload-artifact@main
       if: env.UPLOAD_BIN_ARTIFACTS == 'true' && env.Compile_Result == 'true' && !cancelled()
