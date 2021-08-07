@@ -27,16 +27,14 @@ env:
   TARGET_PROFILE: phicomm_psg1218a
 # 源码仓库:分支
   DEFAULT_SOURCE: coolsnowwolf/lede:master
-# 固件默认管理IP
-  DEFAULT_MANAGE_IP: ${{ github.event.inputs.ip_addr }} 
 # 固件默认管理密码
   DEFAULT_PASSWORD: password
 # 上传固件到 Github Releases
   UPLOAD_RELEASES: true
 # 上传固件到 Github Artifacts
-  UPLOAD_ARTIFACTS: false
+  UPLOAD_ARTIFACTS: true
 # 上传 bin 文件夹到 Github Artifacts
-  UPLOAD_BIN_ARTIFACTS: false
+  UPLOAD_BIN_ARTIFACTS: true
 # 删除无用文件以释放更多空间
   DELETE_USELESS_FILES: true
 # 删除早期的 workflow 任务
@@ -90,9 +88,6 @@ jobs:
         echo "Openwrt_Repo=$REPO_URL" >> $GITHUB_WORKSPACE/Openwrt.info
         echo "Artifacts_Date=$(date +%m%d%H%M)" >> $GITHUB_ENV
         touch Release_info
-    - name: Check space usage
-      if: (!cancelled())
-      run: df -hT
       
     - name: Clone Openwrt Source Code
       run: |
@@ -128,10 +123,6 @@ jobs:
       run: |
         cd openwrt
         source $GITHUB_WORKSPACE/Scripts/AutoBuild_Function.sh && PS_Firmware
-        
-    - name: Check space usage
-      if: (!cancelled())
-      run: df -hT
       
     - name: Upload Firmware to Artifacts
       uses: actions/upload-artifact@main
@@ -166,7 +157,7 @@ jobs:
         
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: env.UPLOAD_RELEASES == 'true' && !cancelled()
       with:
         keep_latest: 3
         delete_tags: true
