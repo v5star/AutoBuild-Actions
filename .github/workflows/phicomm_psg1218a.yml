@@ -153,7 +153,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: OpenWrt-phicomm_k2p
+        tag_name: OpenWrt-斐讯_k2
         body_path: Release_info
         files: openwrt/bin/Firmware/*
 
