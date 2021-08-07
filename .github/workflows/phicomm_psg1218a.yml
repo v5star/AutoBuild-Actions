@@ -1,5 +1,5 @@
 
-name: Build-phicomm_k2p
+name: Build-斐讯_k2
 
 ### 以下内容请保持不变 (修改 环境变量设置 中的信息)
 on:
@@ -24,7 +24,7 @@ on:
 ### 环境变量设置
 env:
 # 设备名称 (可在 README 中找到获取方法)
-  TARGET_PROFILE: phicomm_k2p
+  TARGET_PROFILE: phicomm_psg1218a
 # 源码仓库:分支
   DEFAULT_SOURCE: coolsnowwolf/lede:master
 # 固件默认管理IP
