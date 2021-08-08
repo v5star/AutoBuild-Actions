@@ -8,7 +8,7 @@ on:
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: Lienol
+  REPO_BRANCH: main
   CONFIG_FILE: Configs/test.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
