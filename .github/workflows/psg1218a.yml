@@ -2,7 +2,7 @@ name: build psg1218a
 
 on:
   push:
-    paths: psg1218a
+    paths: Configs/psg1218a
 
 env:
   CONFIG_FILE: Configs/psg1218a
