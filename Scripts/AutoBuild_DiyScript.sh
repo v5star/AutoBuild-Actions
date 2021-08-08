@@ -22,6 +22,18 @@ Firmware-Diy() {
 	x86_64)
 		:
 	;;
+	lenovo_newifi-y1)
+		:
+		AddPackage git small small kenzok8 master
+	        AddPackage git other openwrt-packages kenzok8 master
+		sed -i "s/OpenWrt/Newifi/g" package/base-files/files/bin/config_generate
+	;;
+	phicomm_psg1218a)
+		:
+		#AddPackage git small small kenzok8 master
+	        #AddPackage git other openwrt-packages kenzok8 master
+		sed -i "s/OpenWrt/MtWifi/g" package/base-files/files/bin/config_generate
+	;;
 	*)
 		:		
 		#AddPackage git other openwrt-packages liuran001 packages
