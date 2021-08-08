@@ -220,8 +220,8 @@ Firmware-Diy_Base() {
 	coolsnowwolf)
 		Copy CustomFiles/Depends/coremark.sh package/feeds/packages/coremark
 		Copy CustomFiles/Depends/cpuinfo_x86 package/lean/autocore/files/x86/sbin cpuinfo
-		#AddPackage git other helloworld fw876 master
-		#sed -i 's/143/143,8080/' $(PKG_Finder d package luci-app-ssr-plus)/root/etc/init.d/shadowsocksr
+		AddPackage git other helloworld fw876 master
+		sed -i 's/143/143,8080/' $(PKG_Finder d package luci-app-ssr-plus)/root/etc/init.d/shadowsocksr
 		sed -i "s?iptables?#iptables?g" ${Version_File}
 		sed -i "s?${Old_Version}?${Old_Version} @ ${Author} [${Display_Date}]?g" ${Version_File}
 	;;
