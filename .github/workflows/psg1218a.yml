@@ -65,5 +65,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success'
       with:
-        name: bin_directory
+        name: lenovo_newifi-y1
         path: lede/bin
