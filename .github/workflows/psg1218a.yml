@@ -3,6 +3,8 @@ name: build psg1218a
 on:
   push:
     paths: Configs/psg1218a
+  watch:
+    types: [started]
 
 env:
   CONFIG_FILE: Configs/psg1218a
