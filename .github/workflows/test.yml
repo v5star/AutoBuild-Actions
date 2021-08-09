@@ -11,7 +11,7 @@ env:
   REPO_BRANCH: openwrt-18.06
   CONFIG_FILE: Configs/test.config
   DIY_SH: diy.sh
-  FREE_UP_DISK: false
+  FREE_UP_DISK: true
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
