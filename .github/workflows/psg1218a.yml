@@ -63,5 +63,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success'
       with:
-        name: lede_directory
+        name: bin_directory
         path: lede/bin
