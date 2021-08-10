@@ -28,13 +28,15 @@ jobs:
 
     - name: Clone source code
       run: |
-        #git clone https://github.com/coolsnowwolf/lede && cd lede
+        git clone https://github.com/coolsnowwolf/lede && cd lede/package/lean
+        rm -rf luci-theme-argon
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git 
         #git clone https://github.com/BoringCat/luci-app-mentohust.git package/luci-app-mentohust
         #git clone https://github.com/openwrt-dev/po2lmo.git
         #git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/mentohust
         #git clone -b main --single-branch https://github.com/Lienol/openwrt lede && cd lede
-        git clone -b openwrt-18.06 --single-branch https://github.com/immortalwrt/immortalwrt lede && cd lede/package
-        git clone https://github.com/jerrykuku/luci-theme-argon.git  
+        #git clone -b openwrt-18.06 --single-branch https://github.com/immortalwrt/immortalwrt lede && cd lede/package
+        #git clone https://github.com/jerrykuku/luci-theme-argon.git  
 
     - name: Update feeds
       run: cd lede && ./scripts/feeds update -a
@@ -68,5 +70,15 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success'
       with:
-        name: openwrt_bin_immortalwrt
+        name: openwrt_lede
         path: lede/bin
+        
+    - name: Upload Firmware to Github Releases
+      uses: softprops/action-gh-release@v1
+      if: steps.compile.outputs.status == 'success' &&  !cancelled()
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: OpenWrt_lede
+        files: lede/bin/targets/*/*/*-sysupgrade.bin
+        
