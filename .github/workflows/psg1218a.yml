@@ -1,4 +1,4 @@
-name: build psg1218a
+name: build immortalwrt_y1
 
 on:
   push:
@@ -32,7 +32,8 @@ jobs:
         #git clone https://github.com/BoringCat/luci-app-mentohust.git package/luci-app-mentohust
         #git clone https://github.com/openwrt-dev/po2lmo.git
         #git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/mentohust
-        git clone -b main --single-branch https://github.com/Lienol/openwrt lede && cd lede
+        #git clone -b main --single-branch https://github.com/Lienol/openwrt lede && cd lede
+        git clone -b openwrt-18.06 --single-branch https://github.com/immortalwrt/immortalwrt lede && cd lede
 
     - name: Update feeds
       run: cd lede && ./scripts/feeds update -a
@@ -66,5 +67,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success'
       with:
-        name: Lienol_lenovo_newifi-y1
+        name: openwrt_bin_immortalwrt
         path: lede/bin
