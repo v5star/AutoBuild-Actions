@@ -3,3 +3,4 @@ CONFIG_TARGET_ramips_mt7620=y
 CONFIG_TARGET_ramips_mt7620_DEVICE_lenovo_newifi-y1=y
 #风格主题
 CONFIG_PACKAGE_luci-theme-argon=y
+
