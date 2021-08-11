@@ -32,7 +32,7 @@ Firmware-Diy() {
 		:
 		#AddPackage git small small kenzok8 master
 	        #AddPackage git other openwrt-packages kenzok8 master
-		sed -i "s/OpenWrt/MtWifi/g" package/base-files/files/bin/config_generate
+		sed -i "s/OpenWrt/K2/g" package/base-files/files/bin/config_generate
 	;;
 	*)
 		:		
