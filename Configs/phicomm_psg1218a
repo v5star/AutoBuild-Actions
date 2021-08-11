@@ -23,5 +23,5 @@ CONFIG_PACKAGE_luci-app-autoreboot=m
 CONFIG_PACKAGE_luci-app-filetransfer=n
 CONFIG_PACKAGE_luci-app-turboacc=n
 #插件
-CONFIG_PACKAGE_luci-app-adbyby-plus=y
+#CONFIG_PACKAGE_luci-app-adbyby-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus=n
