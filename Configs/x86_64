@@ -7,3 +7,19 @@ CONFIG_TARGET_KERNEL_PARTSIZE=32
 CONFIG_TARGET_ROOTFS_PARTSIZE=480
 # CONFIG_GRUB_CONSOLE is not set
 CONFIG_TARGET_IMAGES_GZIP=y
+
+#
+# 3. Applications
+#
+CONFIG_PACKAGE_luci-app-apfree-wifidog=y
+CONFIG_PACKAGE_luci-app-chatgptd=y
+CONFIG_PACKAGE_luci-app-firewall=y
+CONFIG_PACKAGE_luci-app-kcptun=y
+CONFIG_PACKAGE_luci-app-opkg=y
+
+#
+# Captive Portals
+#
+CONFIG_PACKAGE_apfree-wifidog=y
+# CONFIG_PACKAGE_x-portal is not set
+# end of Captive Portals
