@@ -167,7 +167,7 @@ Firmware-Diy_Base() {
 	chmod 777 -R ${GITHUB_WORKSPACE}/CustomPackages
 	[[ ${INCLUDE_AutoBuild_Features} == true ]] && {
 		Copy Scripts/AutoBuild_Tools.sh package/base-files/files/bin
-		AddPackage git lean luci-app-autoupdate Hyy2001X main
+		#AddPackage git lean luci-app-autoupdate Hyy2001X main
 		Copy Scripts/AutoUpdate.sh package/base-files/files/bin
 	}
 	[[ ${INCLUDE_Argon} == true ]] && {
