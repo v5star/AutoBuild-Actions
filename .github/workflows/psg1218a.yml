@@ -1,4 +1,4 @@
-name: build openwrt
+name: build openwrt-psg1218a
 
 on:
   push:
